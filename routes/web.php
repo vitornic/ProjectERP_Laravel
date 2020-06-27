@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('angular');
-});
+// Route::get('/', function () {
+//     return view('principal/angular');
+// });
+
+// Route::get('/', function () {
+//     return view('layouts.app');
+// });
+
+//Route::resource('user', 'usuarios_migration_Controller');
+
+//Route::post('store', 'usuarios_migration_Controller@store');
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');

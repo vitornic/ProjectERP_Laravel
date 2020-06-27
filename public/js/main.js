@@ -116,8 +116,9 @@ function AppComponent_button_12_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class AppComponent {
-    constructor(dataService) {
+    constructor(dataService, router) {
         this.dataService = dataService;
+        this.router = router;
         dataService.getLoggedInName.subscribe(name => this.changeName(name));
         if (this.dataService.isLoggedIn()) {
             console.log("loggedin");
@@ -135,10 +136,10 @@ class AppComponent {
     }
     logout() {
         this.dataService.deleteToken();
-        window.location.href = window.location.href;
+        window.location.href = "/";
     }
 }
-AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"])); };
+AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
 AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 17, vars: 4, consts: [["role", "banner", 1, "toolbar"], ["width", "40", "alt", "Angular Logo", "src", "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="], ["routerLink", "Principal", "routerLinkActive", "active"], ["class", "nav-link", "routerLink", "Login", "routerLinkActive", "active", 4, "ngIf"], ["class", "nav-link", "routerLink", "Cadastro", "routerLinkActive", "active", 4, "ngIf"], ["class", "nav-link", "routerLink", "Modulos/Clientes/Cadastro/C_Client", "routerLinkActive", "active", 4, "ngIf"], ["type", "button", "class", "btn btn-block", 3, "click", 4, "ngIf"], ["routerLink", "Login", "routerLinkActive", "active", 1, "nav-link"], ["routerLink", "Cadastro", "routerLinkActive", "active", 1, "nav-link"], ["routerLink", "Modulos/Clientes/Cadastro/C_Client", "routerLinkActive", "active", 1, "nav-link"], ["type", "button", 1, "btn", "btn-block", 3, "click"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 1);
@@ -181,7 +182,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
                 templateUrl: './app.component.html',
                 styleUrls: ['./app.component.css']
             }]
-    }], function () { return [{ type: _services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"] }]; }, null); })();
+    }], function () { return [{ type: _services_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
 
 
 /***/ }),
@@ -345,7 +346,7 @@ class CadastroComponent {
         this.dataService.userregistration(angForm1.value.name, angForm1.value.email, angForm1.value.password)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["first"])())
             .subscribe(data => {
-            this.router.navigate(['login']);
+            this.router.navigate(['Login']);
         }, error => {
         });
     }
@@ -590,15 +591,15 @@ class ApiService {
         this.getLoggedInName = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     userlogin(email, senha) {
-        return this.httpClient.post(this.PHP_API_SERVER + '/login.php', { email, senha }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(usuario => {
-            this.setToken(usuario[0].NOME);
+        return this.httpClient.post(this.PHP_API_SERVER + '/login.php', { email, senha }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(Users => {
+            this.setToken(Users[0].name);
             this.getLoggedInName.emit(true);
-            return usuario;
+            return Users;
         }));
     }
     userregistration(nome, email, senha) {
-        return this.httpClient.post(this.PHP_API_SERVER + '/cadastro.php', { nome, email, senha }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(usuario => {
-            return usuario;
+        return this.httpClient.post(this.PHP_API_SERVER + '/cadastro.php', { nome, email, senha }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(Users => {
+            return Users;
         }));
     }
     //token
@@ -647,8 +648,8 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false,
-    web_api_url_base: 'http://localhost/backend/'
+    production: true,
+    web_api_url_base: 'https://api.erpe-stock.com.br/api/'
 };
 /*
  * For easier debugging in development mode, you can import the following file
