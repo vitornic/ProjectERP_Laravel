@@ -30,6 +30,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('exemplo', function () {
+Route::get('modulos', function () {
     // rotas acessadas apenas por usuarios logados
 })->middleware('auth');
