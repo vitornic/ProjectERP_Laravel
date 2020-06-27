@@ -89,7 +89,6 @@
                 <a href="#contact"><i class="fa fa-fw fa-cog"></i> {{ __('Sistema') }}</a>
             </div>
         </div>
-    @endguest
 
     <div id="app">
 
@@ -140,6 +139,7 @@
                 </div>
             </div>
         </nav>
+        @endguest
 
         <main class="py-4">
             @yield('content')
