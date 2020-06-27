@@ -38,9 +38,6 @@
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
-* {
-    width: 100% - 160x;
-}
 </style>
 
 <!doctype html>
@@ -65,7 +62,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<nav>
+<body>
+
     @guest
     @else
         <div>
@@ -83,13 +81,13 @@
             </div>
         </div>
     @endguest
-</nav>
-<body>
 
     <div id="app">
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
             <div class="container">
+
 
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
