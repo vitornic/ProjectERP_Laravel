@@ -2,7 +2,7 @@
     /* Style the sidebar - fixed full height */
 .sidebar {
   height: 100%;
-  width: 160px;
+  width: 200px;
   position: relative;
   float: left;
   z-index: 1;
@@ -30,7 +30,7 @@
 
 /* Style the main content */
 .main {
-  margin-left: 160px; /* Same as the width of the sidenav */
+  margin-left: 200px; /* Same as the width of the sidenav */
   padding: 0px 10px;
 }
 
@@ -71,18 +71,22 @@
         <div>
             <div class="sidebar">
 
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="#">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
-
-
+                    &nbsp MODULOS
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-            <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
-            <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
-            <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
-            <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+
+                <a href="#financeiro"><i class="fa fa-fw fa-money {{ Request::is('financeiro') ? 'active' : '' }}"></i> {{ __('Financeiro') }}</a>
+                <a href="#home"><i class="fa fa-fw fa-cart-arrow-down"></i> {{ __('Vendas') }}</a>
+                <a href="#clients"><i class="fa fa-fw fa-cart-plus"></i> {{ __('Compras') }}</a>
+                <a href="#contact"><i class="fa fa-fw fa-user-plus"></i> {{ __('Cadastro') }}</a>
+                <a href="#contact"><i class="fa fa-fw fa-dropbox"></i> {{ __('Produtos') }}</a>
+                <a href="#contact"><i class="fa fa-fw fa-pie-chart"></i> {{ __('Estoque') }}</a>
+                <a href="#contact"><i class="fa fa-fw fa-line-chart"></i> {{ __('Relatórios') }}</a>
+                <a href="#contact"><i class="fa fa-fw fa-cog"></i> {{ __('Sistema') }}</a>
             </div>
         </div>
     @endguest
