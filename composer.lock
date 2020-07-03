@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ef59d3492edd866d84a392971c82a2c",
+    "content-hash": "68baafd550433a4b7e3a2fbf502f9f50",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4445,49 +4445,6 @@
                 }
             ],
             "time": "2020-06-15T23:49:30+00:00"
-        },
-        {
-            "name": "woo/laravel-grid-view",
-            "version": "2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/deniskoronets/Laravel-GridView.git",
-                "reference": "0ff87e093bd2e174b177908aec985a2d7eda7c31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/deniskoronets/Laravel-GridView/zipball/0ff87e093bd2e174b177908aec985a2d7eda7c31",
-                "reference": "0ff87e093bd2e174b177908aec985a2d7eda7c31",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Woo\\GridView\\GridViewServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Woo\\GridView\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Denis Koronets",
-                    "email": "deniskoronets@woo.zp.ua"
-                }
-            ],
-            "description": "Yii2 gridview analog for laravel",
-            "time": "2020-04-10T21:29:02+00:00"
         }
     ],
     "packages-dev": [
