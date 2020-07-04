@@ -1,16 +1,20 @@
 <style>
     /* Style the sidebar - fixed full height */
 .sidebar {
-  height: 100%;
+  /*height: 100vh;*/
   width: 200px;
   position: relative;
   float: left;
+  /*display: block;*/
   z-index: 1;
   top: 0;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
+  overflow: none;
   padding-top: 16px;
+  margin-bottom: -101vh;
+  padding-bottom: 101vh;
 }
 
 /* Style sidebar links */
@@ -32,6 +36,7 @@
 .main {
   margin-left: 200px; /* Same as the width of the sidenav */
   padding: 0px 10px;
+  min-height: 100%;
 }
 
 /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
