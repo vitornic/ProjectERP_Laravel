@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class movimentos_migration extends Model
+class Produtos extends Model
 {
     //
 }
