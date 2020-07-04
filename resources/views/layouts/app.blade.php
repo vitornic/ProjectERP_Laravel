@@ -17,6 +17,11 @@
   padding-bottom: 101vh;
 }
 
+.active {
+    color: white;
+    background-color: rgba(240, 248, 255, 0.233);
+}
+
 /* Style sidebar links */
 .sidebar a {
   padding: 6px 8px 6px 16px;
@@ -91,14 +96,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a href="finances"><i class="fa fa-fw fa-money {{ Request::is('Finances') ? 'active' : '' }}"></i> {{ __('Financeiro') }}</a>
-                <a href="#home"><i class="fa fa-fw fa-cart-arrow-down"></i> {{ __('Vendas') }}</a>
-                <a href="#clients"><i class="fa fa-fw fa-cart-plus"></i> {{ __('Compras') }}</a>
-                <a href="#contact"><i class="fa fa-fw fa-user-plus"></i> {{ __('Cadastro') }}</a>
-                <a href="#contact"><i class="fa fa-fw fa-dropbox"></i> {{ __('Produtos') }}</a>
-                <a href="#contact"><i class="fa fa-fw fa-pie-chart"></i> {{ __('Estoque') }}</a>
-                <a href="#contact"><i class="fa fa-fw fa-line-chart"></i> {{ __('Relatórios') }}</a>
-                <a href="#contact"><i class="fa fa-fw fa-cog"></i> {{ __('Sistema') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}"><i class="fa fa-fw fa-money"></i> {{ __('Financeiro') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}><i class="fa fa-fw fa-cart-arrow-down"></i> {{ __('Vendas') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}><i class="fa fa-fw fa-cart-plus"></i> {{ __('Compras') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}><i class="fa fa-fw fa-user-plus"></i> {{ __('Cadastro') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}><i class="fa fa-fw fa-dropbox"></i> {{ __('Produtos') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}><i class="fa fa-fw fa-pie-chart"></i> {{ __('Estoque') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}><i class="fa fa-fw fa-line-chart"></i> {{ __('Relatórios') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}><i class="fa fa-fw fa-cog"></i> {{ __('Sistema') }}</a>
             </div>
         </div>
 
@@ -108,7 +113,7 @@
 
             <div class="container">
 
-                <a href="{{ url('/') }}"><img src="{{ ('../../imgs/logo.png') }}" alt="logo" border="0" height="35px" width="130px"></a>
+                <a href="{{ url('/') }}"><img src="{{ ('../../imgs/logo.png') }}" alt="logo" style="" border="0" height="35px" width="130px"></a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
