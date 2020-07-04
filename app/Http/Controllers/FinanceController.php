@@ -88,7 +88,21 @@ class FinanceController extends Controller
      */
     public function update(Request $request, Finance $finance)
     {
-        //
+        $request->validate([
+            'cliente' => 'required|string',
+            'fatura' => 'required',
+            'valor' => 'required|regex:/^\d+(\.\d{1,2})?$/|between:1,5',
+            'codCliente' => 'required|numeric',
+            'descricao' => 'required|alpha',
+            'cdreceita' => 'required|numeric',
+            'operacao' => 'required|numeric',
+            'datacompetencia' => 'required'
+        ]);
+
+        $finance->update($request->all());
+
+        return redirect()->route('finances.index')
+                        ->with('message','Atualizado com sucesso.');
     }
 
     /**

@@ -59,9 +59,7 @@
             <td>
                 <form action="{{ route('finances.destroy',$finance->id) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('finances.show',$finance->id) }}">Mostrar</a>
-
-                    <a class="btn btn-primary" href="{{ route('finances.edit',$finance->id) }}">Editar</a>
+                    <a class="btn btn-primary" href="{{ route('finances.edit',$finance->id) }}">Visualizar</a>
 
                     @csrf
                     @method('DELETE')
