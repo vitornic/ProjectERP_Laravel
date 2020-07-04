@@ -21,6 +21,13 @@
         </div>
     </div>
 
+    @if(session()->has('message'))
+        <div class="uk-alert-success" uk-alert style="text-align: center; position: fixed; top: 0%; left: 18%; z-index: 1; width: 1000px">
+            <a class="uk-alert-close" uk-close></a>
+            <strong> {{ session('message') }} </strong>
+        </div>
+    @endif
+
     <ul class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('finances.index') }}">Recebimentos</a>
@@ -59,16 +66,6 @@
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Deletar</button>
-
-                    @if(session()->has('message'))
-                        teste
-                        <div class="uk-alert-success" uk-alert>
-                            <a class="uk-alert-close" uk-close></a>
-                            {{ session()->get('message') }}
-                            <strong> {{ session('message') }} </strong>
-                        </div>
-                    @endif
-
                 </form>
             </td>
         </tr>
