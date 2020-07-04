@@ -40,13 +40,13 @@ class FinanceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'cliente' => 'required',
-            'fatura' => 'required',
-            'valor' => 'required',
-            'codCliente' => 'required',
-            'descricao' => 'required',
-            'cdreceita' => 'required',
-            'operacao' => 'required',
+            'cliente' => 'required|string',
+            'fatura' => 'required|unique:finances',
+            'valor' => 'required|regex:/^\d+(\.\d{1,2})?$/|between:1,5',
+            'codCliente' => 'required|numeric',
+            'descricao' => 'required|alpha',
+            'cdreceita' => 'required|numeric',
+            'operacao' => 'required|numeric',
             'datacompetencia' => 'required'
         ]);
 
@@ -75,7 +75,8 @@ class FinanceController extends Controller
      */
     public function edit(Finance $finance)
     {
-        //
+        return view('modulos.finances.edit',compact('finance'));
+
     }
 
     /**
@@ -98,6 +99,8 @@ class FinanceController extends Controller
      */
     public function destroy(Finance $finance)
     {
-        //
+        $finance->delete();
+
+        return redirect()->route('finances.index')->with('message','Lançamento excluído com sucesso.')->withErrors('message','erro ao exlcuir');
     }
 }

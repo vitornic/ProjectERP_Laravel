@@ -56,6 +56,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -97,7 +103,7 @@
 
             <div class="container">
 
-                <a href="{{ url('/') }}"><img src="{{ ('../imgs/logo.png') }}" alt="logo" border="0" height="35px" width="130px"></a>
+                <a href="{{ url('/') }}"><img src="{{ ('../../imgs/logo.png') }}" alt="logo" border="0" height="35px" width="130px"></a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

@@ -48,7 +48,7 @@
             <td>{{ $finance->fatura }}</td>
             <td>{{ $finance->datacompetencia }}</td>
             <td>{{ $finance->operacao }}</td>
-            <td>{{ $finance->datacompetencia }}</td>
+            <td>{{ $finance->valor }}</td>
             <td>
                 <form action="{{ route('finances.destroy',$finance->id) }}" method="POST">
 
@@ -58,8 +58,17 @@
 
                     @csrf
                     @method('DELETE')
-
                     <button type="submit" class="btn btn-danger">Deletar</button>
+
+                    @if(session()->has('message'))
+                        teste
+                        <div class="uk-alert-success" uk-alert>
+                            <a class="uk-alert-close" uk-close></a>
+                            {{ session()->get('message') }}
+                            <strong> {{ session('message') }} </strong>
+                        </div>
+                    @endif
+
                 </form>
             </td>
         </tr>

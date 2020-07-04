@@ -20,8 +20,9 @@
 </div>
 
 @if ($errors->any())
-    <div class="alert alert-danger">
-        <strong>Warning!</strong> Please check your input code<br><br>
+</div>
+    <div class="uk-alert-danger" uk-alert style="position: fixed; top: 0%; left: 18%; z-index: 1; width: 1000px">
+        <a class="uk-alert-close" uk-close></a>
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -41,45 +42,45 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                     <label for="codLancamento">Cód. Lançamento</label>
-                    <input type="text" required class="form-control" id="codLancamento" name="codLancamento" placeholder="" readonly>
+                    <input type="text" class="form-control" id="codLancamento" name="codLancamento" placeholder="" readonly>
                     </div>
                     <div class="form-group col-md-4">
                     <label for="fatura">{{ __('Número da Fatura') }}</label>
-                    <input type="text" required class="form-control" id="fatura" name="fatura">
+                    <input type="number" class="form-control" id="fatura" name="fatura" value="{{ old('fatura') }}" autocomplete="fatura" autofocus>
                     </div>
                     <div class="form-group col-md-4">
                     <label for="valor">{{ __('Valor do Lançamento') }}</label>
-                    <input type="text" required class="form-control" id="valor" name="valor">
+                    <input type="tel" class="form-control" placeholder="Valores sem vírgulas ou pontos" id="valor" name="valor" value="{{ old('valor') }}" autocomplete="valor" autofocus>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8">
                         <label for="cliente">{{ __('Nome do Cliente') }}</label>
-                        <input type="text" required class="form-control" id="cliente" name="cliente">
+                        <input type="text" class="form-control" id="cliente" name="cliente" value="{{ old('cliente') }}" autocomplete="cliente" autofocus>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="codCliente">{{ __('Cód. Cliente') }}</label>
-                        <input type="text" required class="form-control" id="codCliente" name="codCliente">
+                        <input type="text" class="form-control" id="codCliente" name="codCliente" value="{{ old('codCliente') }}" autocomplete="codCliente" autofocus>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="cdreceita">{{ __('Conta da Receita') }}</label>
-                        <input type="text" required class="form-control" id="cdreceita" name="cdreceita">
+                        <input type="text" class="form-control" id="cdreceita" name="cdreceita" value="{{ old('cdreceita') }}" autocomplete="cdreceita" autofocus>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="descricao">{{ __('Descrição do Lançamento') }}</label>
-                        <input type="text" required class="form-control" id="descricao" name="descricao">
+                        <input type="text" class="form-control" id="descricao" name="descricao" value="{{ old('descricao') }}" autocomplete="descricao" autofocus>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="datacompetencia">{{ __('Data de Competência') }}</label>
-                        <input type="date" required class="form-control" id="datacompetencia" name="datacompetencia">
+                        <input type="date" class="form-control" id="datacompetencia" name="datacompetencia" value="{{ old('datacompetencia') }}" autocomplete="datacompetencia" autofocus>
                     </div>
                     <div class="form-group col-md-6">
                     <label for="operacao">{{ __('Operação') }}</label>
-                    <input type="text" required class="form-control" id="operacao" name="operacao">
+                    <input type="text" class="form-control" id="operacao" name="operacao" value="{{ old('operacao') }}" autocomplete="operacao" autofocus>
                     </div>
                 </div>
             </div>
