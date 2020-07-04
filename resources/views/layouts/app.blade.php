@@ -80,7 +80,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a href="#financeiro"><i class="fa fa-fw fa-money {{ Request::is('financeiro') ? 'active' : '' }}"></i> {{ __('Financeiro') }}</a>
+                <a href="finances"><i class="fa fa-fw fa-money {{ Request::is('Finances') ? 'active' : '' }}"></i> {{ __('Financeiro') }}</a>
                 <a href="#home"><i class="fa fa-fw fa-cart-arrow-down"></i> {{ __('Vendas') }}</a>
                 <a href="#clients"><i class="fa fa-fw fa-cart-plus"></i> {{ __('Compras') }}</a>
                 <a href="#contact"><i class="fa fa-fw fa-user-plus"></i> {{ __('Cadastro') }}</a>
@@ -97,7 +97,7 @@
 
             <div class="container">
 
-                <a href="{{ url('/') }}"><img src="{{ ('imgs/logo.png') }}" alt="logo" border="0" height="35px" width="130px"></a>
+                <a href="{{ url('/') }}"><img src="{{ ('../imgs/logo.png') }}" alt="logo" border="0" height="35px" width="130px"></a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
