@@ -99,7 +99,7 @@
                 <a href="{{ route('finances.index') }}" class="{{ Request::is('finances') ? 'active' : '' }}"><i class="fa fa-fw fa-money"></i> {{ __('Financeiro') }}</a>
                 <a href="{{ route('vendas.index') }}" class="{{ Request::is('vendas') ? 'active' : '' }}"><i class="fa fa-fw fa-cart-arrow-down"></i> {{ __('Vendas') }}</a>
                 <a href="{{ route('compras.index') }}" class="{{ Request::is('compras') ? 'active' : '' }}"><i class="fa fa-fw fa-cart-plus"></i> {{ __('Compras') }}</a>
-                <a href="{{ route('cadastro.index') }}" class="{{ Request::is('cadastro') ? 'active' : '' }}"><i class="fa fa-fw fa-user-plus"></i> {{ __('Cadastro') }}</a>
+                <a href="{{ route('cadastros.index') }}" class="{{ Request::is('cadastros') ? 'active' : '' }}"><i class="fa fa-fw fa-user-plus"></i> {{ __('Cadastro') }}</a>
                 <a href="{{ route('produtos.index') }}" class="{{ Request::is('produtos') ? 'active' : '' }}"><i class="fa fa-fw fa-dropbox"></i> {{ __('Produtos') }}</a>
                 <a href="{{ route('estoque.index') }}" class="{{ Request::is('estoque') ? 'active' : '' }}"><i class="fa fa-fw fa-pie-chart"></i> {{ __('Estoque') }}</a>
                 <a href="{{ route('relatorios.index') }}" class="{{ Request::is('relatorios') ? 'active' : '' }}"><i class="fa fa-fw fa-line-chart"></i> {{ __('Relatórios') }}</a>

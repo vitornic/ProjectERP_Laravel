@@ -14,7 +14,7 @@ class SistemaController extends Controller
      */
     public function index()
     {
-        //
+        return view('modulos.sistema.index');
     }
 
     /**

@@ -33,6 +33,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('modulos', function () {
     // rotas acessadas apenas por usuarios logados
+
 })->middleware('auth');
 
 Route::resource('finances', 'FinanceController');
+
+Route::resource('vendas', 'VendasController');
+
+Route::resource('compras', 'ComprasController');
+
+Route::resource('cadastros', 'CadastroController');
+
+Route::resource('produtos', 'ProdutosController');
+
+Route::resource('estoque', 'EstoqueController');
+
+Route::resource('relatorios', 'RelatoriosController');
+
+Route::resource('sistema', 'SistemaController');

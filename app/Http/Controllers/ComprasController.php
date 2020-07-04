@@ -14,7 +14,7 @@ class ComprasController extends Controller
      */
     public function index()
     {
-        //
+        return view('modulos.compras.index');
     }
 
     /**
