@@ -91,7 +91,7 @@ class FinanceController extends Controller
         $request->validate([
             'cliente' => 'required|string',
             'fatura' => 'required',
-            'valor' => 'required|regex:/^\d+(\.\d{1,2})?$/|between:1,5',
+            'valor' => 'required|numeric',
             'codCliente' => 'required|numeric',
             'descricao' => 'required|alpha',
             'cdreceita' => 'required|numeric',
