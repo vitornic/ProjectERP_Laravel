@@ -14,7 +14,7 @@ class FinanceController extends Controller
      */
     public function index()
     {
-        $finances = Finance::latest()->paginate(15);
+        $finances = Finance::latest()->paginate(4);
         //return view('modulos.finances.index');
         return view('modulos.finances.index',compact('finances'))->with('i', (request()->input('page',1)-1)*5);
     }

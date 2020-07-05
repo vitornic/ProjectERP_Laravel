@@ -61,7 +61,7 @@
         @endforeach
     </table>
 
-    {!! $finances ?? ''->links() !!}
+    {!! $finances->links() !!}
     </div>
 
 @endsection
