@@ -1,5 +1,14 @@
 @extends('home')
-
+<script>
+    function k(i) {
+	var v = i.value.replace(/\D/g,'');
+	v = (v/100).toFixed(2) + '';
+	v = v.replace(",", ".");
+	v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1$2$3.");
+	v = v.replace(/(\d)(\d{3}),/g, "$1.$2.");
+	i.value = v;
+}
+</script>
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
@@ -43,7 +52,7 @@
                     </div>
                     <div class="form-group col-md-4">
                     <label for="valor">{{ __('Valor do Lançamento') }}</label>
-                    <input type="tel" class="form-control" maxlength="13" placeholder="5000.99" id="valor" name="valor" value="{{ old('valor') }}" autocomplete="valor" autofocus>
+                    <input type="tel" class="form-control" onkeyup="k(this)" maxlength="13" placeholder="5000.99" id="valor" name="valor" value="{{ old('valor') }}" autocomplete="valor" autofocus>
                     </div>
                 </div>
                 <div class="form-row">
