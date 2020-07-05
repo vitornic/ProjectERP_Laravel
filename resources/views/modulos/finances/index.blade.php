@@ -53,7 +53,7 @@
             <td>{{ $finance->id }}</td>
             <td>{{ $finance->cliente }}</td>
             <td>{{ $finance->fatura }}</td>
-            <td>{{ $finance->datacompetencia }}</td>
+            <td>{{ date("d/m/Y", strtotime($finance->datacompetencia)) }}</td>
             <td>{{ $finance->operacao }}</td>
             <td>R$ {{ number_format($finance->valor, 2, ',', '.') }}</td>
             <td>
