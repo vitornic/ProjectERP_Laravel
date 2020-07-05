@@ -69,7 +69,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="datacompetencia">{{ __('Data de Competência') }}</label>
-                        <input type="date" class="form-control" id="datacompetencia" name="datacompetencia" value="{{ old('datacompetencia') }}" autocomplete="datacompetencia" autofocus>
+                        <input type="date" max="2999-12-31" class="form-control" id="datacompetencia" name="datacompetencia" value="{{ old('datacompetencia') }}" autocomplete="datacompetencia" autofocus>
                     </div>
                     <div class="form-group col-md-6">
                     <label for="operacao">{{ __('Operação') }}</label>

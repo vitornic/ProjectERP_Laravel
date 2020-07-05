@@ -96,7 +96,7 @@ class FinanceController extends Controller
             'descricao' => 'required|alpha',
             'cdreceita' => 'required|numeric',
             'operacao' => 'required|numeric',
-            'datacompetencia' => 'required'
+            'datacompetencia' => 'required|date_format:Y-m-d'
         ]);
 
         $finance->update($request->all());
