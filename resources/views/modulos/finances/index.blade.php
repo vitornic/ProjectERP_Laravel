@@ -1,13 +1,4 @@
 @extends('home')
-<style>
-    .tabela {
-        float: left;
-        position: relative;
-        width: auto;
-        padding: 14px;
-        max-width: 83.7%;
-    }
-</style>
 
 @section('content')
     <div class="row">

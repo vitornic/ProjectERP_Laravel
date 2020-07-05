@@ -1,12 +1,5 @@
 @extends('home')
-<style>
-    .fix {
-        float: left;
-        position: relative;
-        width: 83.7%;
-        padding: 10px;
-    }
-</style>
+
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">

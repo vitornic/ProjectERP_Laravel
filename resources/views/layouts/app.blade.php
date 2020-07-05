@@ -50,6 +50,21 @@
   .sidebar a {font-size: 18px;}
 }
 
+.fix {
+    float: left;
+    position: relative;
+    width: 83.7%;
+    padding: 10px;
+}
+
+.tabela {
+    float: left;
+    position: relative;
+    width: auto;
+    padding: 14px;
+    max-width: 83.7%;
+}
+
 </style>
 
 <!doctype html>
