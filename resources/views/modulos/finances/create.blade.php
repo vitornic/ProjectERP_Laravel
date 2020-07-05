@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group col-md-4">
                     <label for="valor">{{ __('Valor do Lançamento') }}</label>
-                    <input type="tel" class="form-control" onkeyup="k(this)" maxlength="13" placeholder="5000.99" id="valor" name="valor" value="{{ old('valor') }}" autocomplete="valor" autofocus>
+                    <input type="tel" class="form-control" onkeyup="k(this)" maxlength="13" id="valor" name="valor" value="{{ old('valor') }}" autocomplete="valor" autofocus>
                     </div>
                 </div>
                 <div class="form-row">
