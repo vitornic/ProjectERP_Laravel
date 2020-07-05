@@ -55,7 +55,7 @@
             <td>{{ $finance->fatura }}</td>
             <td>{{ $finance->datacompetencia }}</td>
             <td>{{ $finance->operacao }}</td>
-            <td>{{ number_format($finance->valor, 2, ',', '.') }}</td>
+            <td>R$ {{ number_format($finance->valor, 2, ',', '.') }}</td>
             <td>
                 <form action="{{ route('finances.destroy',$finance->id) }}" method="POST">
 
