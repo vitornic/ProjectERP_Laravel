@@ -40,9 +40,9 @@ class FinanceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'cliente' => 'required|string',
+            'cliente' => 'required|string|regex:/^[\p{L}\s-]+$/|max:255',
             'fatura' => 'required|unique:finances',
-            'valor' => 'required|numeric',
+            'valor' => 'required|numeric|max:14',
             'codCliente' => 'required|numeric',
             'descricao' => 'required|alpha',
             'cdreceita' => 'required|numeric',
@@ -89,9 +89,9 @@ class FinanceController extends Controller
     public function update(Request $request, Finance $finance)
     {
         $request->validate([
-            'cliente' => 'required|string',
+            'cliente' => 'required|string|regex:/^[\p{L}\s-]+$/|max:255',
             'fatura' => 'required',
-            'valor' => 'required|numeric',
+            'valor' => 'required|numeric|max:14',
             'codCliente' => 'required|numeric',
             'descricao' => 'required|alpha',
             'cdreceita' => 'required|numeric',

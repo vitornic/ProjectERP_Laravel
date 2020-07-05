@@ -177,6 +177,15 @@ return [
         'year'      => 'ano',
         'description' => 'descrição',
         'password_confirmation' => 'confirmação da senha',
+        'cliente' => 'Nome do Cliente',
+        'fatura' => 'Número da Fatura',
+        'codCliente' => 'Cód. Cliente',
+        'descricao' => 'Descrição do Lançamento',
+        'valor' => 'Valor do Lançamento',
+        'cdreceita' => 'Conta da Receita',
+        'operacao' => 'Operação',
+        'datacompetencia' => 'Data de Competência',
+
     ],
 
 ];

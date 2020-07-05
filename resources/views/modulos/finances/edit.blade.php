@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group col-md-4">
                         <label for="valor">{{ __('Valor do Lançamento') }}</label>
-                        <input type="tel" class="form-control" maxlength="14" placeholder="Valores sem vírgulas ou pontos" id="valor" name="valor" value="{{ $finance->valor }}" autocomplete="valor" autofocus>
+                        <input type="tel" class="form-control" maxlength="13" placeholder="Valores sem vírgulas ou pontos" id="valor" name="valor" value="{{ $finance->valor }}" autocomplete="valor" autofocus>
                         </div>
                     </div>
                     <div class="form-row">
