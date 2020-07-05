@@ -19,7 +19,7 @@ class CreateFinancesTable extends Migration
             $table->integer('codCliente');
             $table->integer('fatura')->unique();
             $table->string('descricao');
-            $table->decimal('valor',10,2);
+            $table->decimal('valor',14,2);
             $table->string('cdreceita');
             $table->integer('operacao');
             $table->date('datacompetencia');
