@@ -53,7 +53,7 @@
 .fix {
     float: left;
     position: relative;
-    width: 83.7vh;
+    width: 83.7%;
     padding: 10px;
 }
 
@@ -62,7 +62,7 @@
     position: relative;
     width: auto;
     padding: 14px;
-    max-width: 83.7vh;
+    max-width: 83.7%;
 }
 
 </style>
