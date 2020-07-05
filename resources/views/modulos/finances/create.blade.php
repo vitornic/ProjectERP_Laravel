@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group col-md-4">
                     <label for="valor">{{ __('Valor do Lançamento') }}</label>
-                    <input type="tel" class="form-control" placeholder="Valores sem vírgulas ou pontos" id="valor" name="valor" value="{{ old('valor') }}" autocomplete="valor" autofocus>
+                    <input type="tel" class="form-control" placeholder="5000.99" id="valor" name="valor" value="{{ old('valor') }}" autocomplete="valor" autofocus>
                     </div>
                 </div>
                 <div class="form-row">
