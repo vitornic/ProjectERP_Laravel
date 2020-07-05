@@ -42,7 +42,7 @@ class FinanceController extends Controller
         $request->validate([
             'cliente' => 'required|string|regex:/^[\p{L}\s-]+$/|max:255',
             'fatura' => 'required|unique:finances',
-            'valor' => 'required|numeric|max:14',
+            'valor' => 'required|numeric',
             'codCliente' => 'required|numeric',
             'descricao' => 'required|alpha',
             'cdreceita' => 'required|numeric',
@@ -91,7 +91,7 @@ class FinanceController extends Controller
         $request->validate([
             'cliente' => 'required|string|regex:/^[\p{L}\s-]+$/|max:255',
             'fatura' => 'required',
-            'valor' => 'required|numeric|max:14',
+            'valor' => 'required|numeric',
             'codCliente' => 'required|numeric',
             'descricao' => 'required|alpha',
             'cdreceita' => 'required|numeric',
