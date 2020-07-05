@@ -44,7 +44,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                     <label for="codLancamento">Cód. Lançamento</label>
-                    <input type="text" class="form-control" id="codLancamento" name="codLancamento" placeholder="" readonly>
+                    <input type="text" class="form-control" id="codLancamento" name="codLancamento" value="{{ $codLancamento }}" readonly>
                     </div>
                     <div class="form-group col-md-4">
                     <label for="fatura">{{ __('Número da Fatura') }}</label>

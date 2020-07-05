@@ -26,8 +26,9 @@ class FinanceController extends Controller
      */
     public function create()
     {
-        //$codLancamento = Finance::query('SELECT * FROM finances WHERE max(`id`)')->get();
-        return view('modulos.finances.create');
+
+        $codLancamento = Finance::max('id')+1;
+        return view('modulos.finances.create', compact('codLancamento'));
 
     }
 
