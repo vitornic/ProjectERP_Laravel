@@ -3,6 +3,7 @@
     "scripts": {
         "dev": "npm run development",
         "push": "git pull && git push -u origin master",
+        "conecta-server": "ssh erpe-stock1@ftp.erpe-stock.com.br",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
