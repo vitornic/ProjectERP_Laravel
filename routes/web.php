@@ -37,6 +37,7 @@ Route::get('modulos', function () {
 })->middleware('auth');
 
 Route::resource('finances', 'FinanceController');
+Route::resource('pagamentos', 'PagamentosController');
 
 Route::resource('vendas', 'VendasController');
 

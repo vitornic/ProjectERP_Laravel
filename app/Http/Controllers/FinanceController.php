@@ -65,7 +65,7 @@ class FinanceController extends Controller
      */
     public function show(Finance $finance)
     {
-        return view('modulos.finances.show');
+        //
     }
 
     /**
@@ -116,6 +116,6 @@ class FinanceController extends Controller
     {
         $finance->delete();
 
-        return redirect()->route('finances.index')->with('message','Lançamento excluído com sucesso.')->withErrors('message','erro ao exlcuir');
+        return redirect()->route('finances.index')->with('message','Lançamento excluído com sucesso.')->withErrors('message','erro ao excluir');
     }
 }
