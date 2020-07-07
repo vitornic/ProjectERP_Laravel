@@ -14,7 +14,9 @@ class CadastroController extends Controller
      */
     public function index()
     {
-        return view('modulos.cadastros.index');
+        $cadastros = Cadastro::latest()->paginate(4);
+
+        return view('modulos.cadastros.index',compact('cadastros'))->with('i', (request()->input('page',1)-1)*5);
     }
 
     /**

@@ -14,7 +14,9 @@ class ComprasController extends Controller
      */
     public function index()
     {
-        return view('modulos.compras.index');
+        $compras = Compras::latest()->paginate(4);
+
+        return view('modulos.compras.index',compact('compras'))->with('i', (request()->input('page',1)-1)*5);
     }
 
     /**

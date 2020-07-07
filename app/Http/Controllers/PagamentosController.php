@@ -15,7 +15,7 @@ class PagamentosController extends Controller
     public function index()
     {
         $pagamento = Pagamentos::latest()->paginate(4);
-        //return view('modulos.finances.index');
+
         return view('modulos.finances.pagamentos.index',compact('pagamento'))->with('i', (request()->input('page',1)-1)*5);
     }
 

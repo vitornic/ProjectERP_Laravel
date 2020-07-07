@@ -52,3 +52,4 @@ Route::resource('estoque', 'EstoqueController')->middleware('auth');
 Route::resource('relatorios', 'RelatoriosController')->middleware('auth');
 
 Route::resource('sistema', 'SistemaController')->middleware('auth');
+Route::resource('operacoes', 'OperacoesController')->middleware('auth');

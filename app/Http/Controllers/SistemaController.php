@@ -14,7 +14,16 @@ class SistemaController extends Controller
      */
     public function index()
     {
+
+        $cnpj = Sistema::select('CNPJ');
         return view('modulos.sistema.index');
+
+        // if (isset($cnpj)) {
+        //     return view('modulos.sistema.edit');
+        // } else {
+        //     return view('modulos.sistema.index');
+        // }
+
     }
 
     /**
@@ -35,7 +44,28 @@ class SistemaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'CNPJ' => 'required|unique:sistemas|max:14',
+            'razaosocial' => 'required|max:255',
+            'fantasia' => 'required|max:255',
+            'telefone' => 'required|max:13',
+            'celular' => 'required|max:14',
+            'email' => 'required|max:255',
+            'CEP' => 'required|max:8',
+            'UF' => 'required|max:2',
+            'cidade' => 'required|max:255',
+            'endereco' => 'required|max:255',
+            'numero' => 'required',
+            'complemento' => 'required|max:255',
+            'bairro' => 'required|max:255',
+            'inscricaoestadual' => 'required|max:12',
+            'CNAE' => 'required|max:255'
+        ]);
+
+        Sistema::create($request->all());
+
+        return redirect()->route('sistema.index')
+                        ->with('success','Criado com sucesso.');
     }
 
     /**
@@ -57,7 +87,8 @@ class SistemaController extends Controller
      */
     public function edit(Sistema $sistema)
     {
-        //
+        $sistemas = Sistema::latest('id');
+        return view('modulos.sistema.edit',compact('sistema'));
     }
 
     /**
@@ -69,7 +100,28 @@ class SistemaController extends Controller
      */
     public function update(Request $request, Sistema $sistema)
     {
-        //
+        $request->validate([
+            'CNPJ' => 'required|unique:sistemas|max:14',
+            'razaosocial' => 'required|max:255',
+            'fantasia' => 'required|max:255',
+            'telefone' => 'required|max:13',
+            'celular' => 'required|max:14',
+            'email' => 'required|max:255',
+            'CEP' => 'required|max:8',
+            'UF' => 'required|max:2',
+            'cidade' => 'required|max:255',
+            'endereco' => 'required|max:255',
+            'numero' => 'required',
+            'complemento' => 'required|max:255',
+            'bairro' => 'required|max:255',
+            'inscricaoestadual' => 'required|max:12',
+            'CNAE' => 'required|max:255'
+        ]);
+
+        $sistema->update($request->all());
+
+        return redirect()->route('sistema.index')
+                        ->with('success','Atualizado com sucesso.');
     }
 
     /**

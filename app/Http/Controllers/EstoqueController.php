@@ -14,7 +14,9 @@ class EstoqueController extends Controller
      */
     public function index()
     {
-        return view('modulos.estoque.index');
+        $estoques = Estoque::latest()->paginate(4);
+
+        return view('modulos.estoque.index',compact('estoques'))->with('i', (request()->input('page',1)-1)*5);
     }
 
     /**

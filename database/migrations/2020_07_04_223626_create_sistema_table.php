@@ -13,8 +13,23 @@ class CreateSistemaTable extends Migration
      */
     public function up()
     {
-        Schema::create('sistema', function (Blueprint $table) {
+        Schema::create('sistemas', function (Blueprint $table) {
             $table->id();
+            $table->string('CNPJ', 14);
+            $table->string('razaosocial', 255);
+            $table->string('fantasia', 255);
+            $table->string('telefone', 13);
+            $table->string('celular', 14);
+            $table->string('email', 255);
+            $table->string('CEP', 8);
+            $table->string('UF', 2);
+            $table->string('cidade', 255);
+            $table->string('endereco', 255);
+            $table->integer('numero');
+            $table->string('complemento', 255);
+            $table->string('bairro', 255);
+            $table->string('inscricaoestadual', 255);
+            $table->string('CNAE', 255);
             $table->timestamps();
         });
     }
@@ -26,6 +41,6 @@ class CreateSistemaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sistema');
+        Schema::dropIfExists('sistemas');
     }
 }

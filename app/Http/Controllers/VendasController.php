@@ -14,7 +14,9 @@ class VendasController extends Controller
      */
     public function index()
     {
-        return view('modulos.vendas.index');
+        $vendas = Vendas::latest()->paginate(4);
+
+        return view('modulos.vendas.index',compact('vendas'))->with('i', (request()->input('page',1)-1)*5);
     }
 
     /**

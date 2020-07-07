@@ -14,7 +14,9 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        return view('modulos.produtos.index');
+        $produtos = Produtos::latest()->paginate(4);
+
+        return view('modulos.produtos.index',compact('produtos'))->with('i', (request()->input('page',1)-1)*5);
     }
 
     /**

@@ -4,14 +4,14 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Dados Gerais da Empresa</h2>
+                <h2>EDIT</h2>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-tabs">
         <li class="nav-item">
-        <a class="nav-link active" href="{{ route('sistema.index') }}">Geral</a>
+        <a class="nav-link active" href="sistema">Geral</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="">Plano de Contas</a>
@@ -20,10 +20,10 @@
         <a class="nav-link" href="">Contas Caixa</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('operacoes.index') }}">Operações</a>
+            <a class="nav-link" href="">Operações</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">Usuários</a>
+            <a class="nav-link" href="">usuários</a>
         </li>
     </ul>
 
@@ -40,8 +40,9 @@
     </div>
     @endif
 
-    <form action="{{ route('sistema.store') }}" method="POST">
+    <form action="{{ route('sistema.update', 1) }}" method="POST">
         @csrf
+        @method('PUT')
         <div class="fix">
             <div class="col-md-800">
                 <div class="card">
@@ -51,7 +52,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="CNPJ">{{ __('CNPJ') }}</label>
-                                <input type="text" maxlength="14" class="form-control" id="CNPJ" name="CNPJ" value="{{ old('CNPJ') }}" autocomplete="CNPJ" autofocus>
+                                <input type="text" maxlength="14" class="form-control" id="CNPJ" name="CNPJ" value="{{ $CNPJ }}" autocomplete="CNPJ" autofocus>
                             </div>
                         </div>
                         <div class="form-row">
