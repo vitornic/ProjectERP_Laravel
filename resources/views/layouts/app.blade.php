@@ -112,7 +112,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a href="{{ route('finances.index') }}" class="{{ Route::is('finances') || ('pagamentos') ? 'active' : '' }}"><i class="fa fa-fw fa-money"></i> {{ __('Financeiro') }}</a>
+                <a href="{{ route('finances.index') }}" class="{{ Route::is('finances') ? 'active' : '' }}"><i class="fa fa-fw fa-money"></i> {{ __('Financeiro') }}</a>
                 <a href="{{ route('vendas.index') }}" class="{{ Request::is('vendas') ? 'active' : '' }}"><i class="fa fa-fw fa-cart-arrow-down"></i> {{ __('Vendas') }}</a>
                 <a href="{{ route('compras.index') }}" class="{{ Request::is('compras') ? 'active' : '' }}"><i class="fa fa-fw fa-cart-plus"></i> {{ __('Compras') }}</a>
                 <a href="{{ route('cadastros.index') }}" class="{{ Request::is('cadastros') ? 'active' : '' }}"><i class="fa fa-fw fa-user-plus"></i> {{ __('Cadastro') }}</a>
