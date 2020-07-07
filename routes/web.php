@@ -36,19 +36,19 @@ Route::get('modulos', function () {
 
 })->middleware('auth');
 
-Route::resource('finances', 'FinanceController');
-Route::resource('pagamentos', 'PagamentosController');
+Route::resource('finances', 'FinanceController')->middleware('auth');
+Route::resource('pagamentos', 'PagamentosController')->middleware('auth');
 
-Route::resource('vendas', 'VendasController');
+Route::resource('vendas', 'VendasController')->middleware('auth');
 
-Route::resource('compras', 'ComprasController');
+Route::resource('compras', 'ComprasController')->middleware('auth');
 
-Route::resource('cadastros', 'CadastroController');
+Route::resource('cadastros', 'CadastroController')->middleware('auth');
 
-Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController')->middleware('auth');
 
-Route::resource('estoque', 'EstoqueController');
+Route::resource('estoque', 'EstoqueController')->middleware('auth');
 
-Route::resource('relatorios', 'RelatoriosController');
+Route::resource('relatorios', 'RelatoriosController')->middleware('auth');
 
-Route::resource('sistema', 'SistemaController');
+Route::resource('sistema', 'SistemaController')->middleware('auth');
