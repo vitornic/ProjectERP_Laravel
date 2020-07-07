@@ -48,8 +48,8 @@
                         <input type="text" class="form-control" id="codLancamento" name="codLancamento" value="{{ $pagamento->id }}" placeholder="" readonly>
                         </div>
                         <div class="form-group col-md-4">
-                        <label for="fatura">{{ __('Número da Fatura') }}</label>
-                        <input type="number" class="form-control" id="fatura" name="fatura" value="{{ $pagamento->fatura }}" autocomplete="fatura" readonly>
+                        <label for="notafiscal">{{ __('Número da Nota Fiscal') }}</label>
+                        <input type="number" class="form-control" id="notafiscal" name="notafiscal" value="{{ $pagamento->notafiscal }}" autocomplete="notafiscal" readonly>
                         </div>
                         <div class="form-group col-md-4">
                         <label for="valor">{{ __('Valor do Lançamento') }}</label>

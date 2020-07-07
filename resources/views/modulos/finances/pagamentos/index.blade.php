@@ -39,18 +39,18 @@
             <th>Valor</th>
             <th width="200px">Ação</th>
         </tr>
-        @foreach ($pagamentos ?? '' as $pagamento)
+        @foreach ($pagamento ?? '' as $pagament)
         <tr>
-            <td>{{ $pagamento->id }}</td>
-            <td>{{ $pagamento->fornecedor }}</td>
-            <td>{{ $pagamento->notafiscal }}</td>
-            <td>{{ date("d/m/Y", strtotime($pagamento->datacompetencia)) }}</td>
-            <td>{{ $pagamento->operacao }}</td>
-            <td>R$ {{ number_format($pagamento->valor, 2, ',', '.') }}</td>
+            <td>{{ $pagament->id }}</td>
+            <td>{{ $pagament->fornecedor }}</td>
+            <td>{{ $pagament->notafiscal }}</td>
+            <td>{{ date("d/m/Y", strtotime($pagament->datacompetencia)) }}</td>
+            <td>{{ $pagament->operacao }}</td>
+            <td>R$ {{ number_format($pagament->valor, 2, ',', '.') }}</td>
             <td>
-                <form action="{{ route('pagamentos.destroy',$pagamento->id) }}" method="POST">
+                <form action="{{ route('pagamentos.destroy',$pagament->id) }}" method="POST">
 
-                    <a class="btn btn-primary" href="{{ route('pagamentos.edit',$pagamento->id) }}">Visualizar</a>
+                    <a class="btn btn-primary" href="{{ route('pagamentos.edit',$pagament->id) }}">Visualizar</a>
 
                     @csrf
                     @method('DELETE')
@@ -61,7 +61,7 @@
         @endforeach
     </table>
 
-    {!! $pagamentos->links() !!}
+    {!! $pagamento->links() !!}
     </div>
 
 @endsection

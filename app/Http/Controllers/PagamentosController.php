@@ -14,9 +14,9 @@ class PagamentosController extends Controller
      */
     public function index()
     {
-        $pagamentos = Pagamentos::latest()->paginate(4);
+        $pagamento = Pagamentos::latest()->paginate(4);
         //return view('modulos.finances.index');
-        return view('modulos.finances.pagamentos.index',compact('pagamentos'))->with('i', (request()->input('page',1)-1)*5);
+        return view('modulos.finances.pagamentos.index',compact('pagamento'))->with('i', (request()->input('page',1)-1)*5);
     }
 
     /**
@@ -40,7 +40,7 @@ class PagamentosController extends Controller
     {
         $request->validate([
             'fornecedor' => 'required|string|regex:/^[\p{L}\s-]+$/|max:255',
-            'notafiscal' => 'required|unique:pagamentos',
+            'notafiscal' => 'required|unique:pagamentos|max:9',
             'valor' => 'required|numeric',
             'codFornecedor' => 'required|numeric',
             'descricao' => 'required|alpha',
@@ -61,7 +61,7 @@ class PagamentosController extends Controller
      * @param  \App\Pagamentos  $pagamentos
      * @return \Illuminate\Http\Response
      */
-    public function show(Pagamentos $pagamentos)
+    public function show(Pagamentos $pagamento)
     {
         //
     }
@@ -72,9 +72,9 @@ class PagamentosController extends Controller
      * @param  \App\Pagamentos  $pagamentos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pagamentos $pagamentos)
+    public function edit(Pagamentos $pagamento)
     {
-        return view('modulos.finances.pagamentos.edit',compact('pagamentos'));
+        return view('modulos.finances.pagamentos.edit',compact('pagamento'));
     }
 
     /**
@@ -84,11 +84,11 @@ class PagamentosController extends Controller
      * @param  \App\Pagamentos  $pagamentos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pagamentos $pagamentos)
+    public function update(Request $request, Pagamentos $pagamento)
     {
         $request->validate([
             'fornecedor' => 'required|string|regex:/^[\p{L}\s-]+$/|max:255',
-            'notafiscal' => 'required|unique:pagamentos',
+            'notafiscal' => 'required',
             'valor' => 'required|numeric',
             'codFornecedor' => 'required|numeric',
             'descricao' => 'required|alpha',
@@ -97,7 +97,7 @@ class PagamentosController extends Controller
             'datacompetencia' => 'required'
         ]);
 
-        $pagamentos->update($request->all());
+        $pagamento->update($request->all());
 
         return redirect()->route('pagamentos.index')
                         ->with('success','Atualizado com sucesso.');
@@ -109,9 +109,9 @@ class PagamentosController extends Controller
      * @param  \App\Pagamentos  $pagamentos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pagamentos $pagamentos)
+    public function destroy(Pagamentos $pagamento)
     {
-        $pagamentos->delete();
+        $pagamento->delete();
 
         return redirect()->route('pagamentos.index')->with('message','Lançamento excluído com sucesso.')->withErrors('message','erro ao excluir');
     }
